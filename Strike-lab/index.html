@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strike Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <span class="logo">🎳 Strike Lab</span>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#finder">Find Your Ball</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <button id="themeBtn">🌙</button>
+      <button id="menuBtn">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Master the Perfect Strike</h1>
+    <p>Tips • Techniques • Equipment • Stories</p>
+    <a href="#articles" class="btn">Explore Articles</a>
+    <a href="#finder" class="btn btn-outline">Find Your Ball</a>
+  </section>
+
+  <!-- ARTICLES -->
+  <section id="articles">
+    <h2>Latest Articles</h2>
+
+    <input type="text" id="searchBox" placeholder="Search articles...">
+
+    <div class="filters" id="filters"></div>
+
+    <div class="grid" id="articleGrid"></div>
+    <p id="noResults" hidden>No articles found.</p>
+  </section>
+
+  <!-- BALL FINDER -->
+  <section id="finder">
+    <h2>Find Your Ideal Bowling Ball</h2>
+    <p>Answer 5 quick questions to get a simple ball recommendation.</p>
+
+    <form id="finderForm">
+      <label>Experience level
+        <select id="qExperience" required>
+          <option value="" disabled selected>Choose</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </label>
+
+      <label>Bowling style
+        <select id="qStyle" required>
+          <option value="" disabled selected>Choose</option>
+          <option value="straight">Straight</option>
+          <option value="hook">Hook</option>
+          <option value="learning">Still learning</option>
+        </select>
+      </label>
+
+      <label>Lane condition
+        <select id="qLane" required>
+          <option value="" disabled selected>Choose</option>
+          <option value="dry">Dry</option>
+          <option value="medium">Medium</option>
+          <option value="heavy">Heavy oil</option>
+        </select>
+      </label>
+
+      <label>Ball weight: <span id="weightLabel">12</span> lbs
+        <input type="range" id="qWeight" min="6" max="16" value="12">
+      </label>
+
+      <label>Main goal
+        <select id="qGoal" required>
+          <option value="" disabled selected>Choose</option>
+          <option value="accuracy">Accuracy</option>
+          <option value="hook">More hook</option>
+          <option value="control">Control</option>
+        </select>
+      </label>
+
+      <button type="submit" class="btn">Find My Ball</button>
+    </form>
+
+    <div id="finderResult" hidden></div>
+  </section>
+
+  <!-- EQUIPMENT -->
+  <section id="equipment">
+    <h2>Equipment Guide</h2>
+    <div class="grid" id="equipmentGrid"></div>
+
+    <h3>Compare Two Balls</h3>
+    <div class="compare-row">
+      <select id="ballA"></select>
+      <span>vs</span>
+      <select id="ballB"></select>
+    </div>
+    <table id="compareTable"></table>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Strike Lab</h2>
+    <p>Strike Lab is a university project built with plain HTML, CSS, and JavaScript — no backend or database. All articles and ball data are sample content stored directly in script.js.</p>
+  </section>
+
+  <!-- ARTICLE READER -->
+  <div id="reader" hidden>
+    <div class="reader-box">
+      <button id="closeReader">✕</button>
+      <div id="readerContent"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Strike Lab — university project, sample content only.</p>
+  </footer>
+
+  <button id="backToTop" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

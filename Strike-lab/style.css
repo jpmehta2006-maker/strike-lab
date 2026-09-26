@@ -1,0 +1,255 @@
+/* ===== Basic reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #12071f;
+  color: #f0eef7;
+  line-height: 1.6;
+}
+
+section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+h1, h2, h3 { margin-bottom: 10px; }
+a { color: inherit; }
+
+/* ===== Light mode ===== */
+body.light {
+  background: #f7f6fb;
+  color: #201a30;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px 5px 0 0;
+}
+.btn-outline {
+  background: none;
+  border: 1px solid #8b5cf6;
+}
+
+/* ===== Header / Nav ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #1a0d2e;
+  padding: 15px 20px;
+  z-index: 10;
+}
+body.light header { background: #ffffff; border-bottom: 1px solid #ddd; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.logo { font-weight: bold; font-size: 1.2rem; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links a { text-decoration: none; }
+
+#themeBtn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#menuBtn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* ===== Hero ===== */
+.hero { text-align: center; padding: 80px 20px; }
+.hero h1 { font-size: 2.2rem; }
+.hero p { color: #a99fc2; margin-bottom: 20px; }
+
+/* ===== Search + filters ===== */
+#searchBox {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1a0d2e;
+  color: inherit;
+}
+body.light #searchBox { background: #fff; border-color: #ccc; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.filter-btn.active { background: #8b5cf6; border-color: #8b5cf6; }
+
+/* ===== Grid + cards ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: #1a0d2e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 18px;
+}
+body.light .card { background: #fff; border-color: #e0e0e0; }
+.card h3 { font-size: 1.05rem; }
+.card p { color: #a99fc2; font-size: 0.9rem; margin: 8px 0; }
+.card .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: rgba(139,92,246,0.2);
+  color: #c9b8ff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+.card-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.card-actions button {
+  background: none;
+  border: 1px solid #555;
+  color: inherit;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.card-actions button.active { background: #8b5cf6; border-color: #8b5cf6; }
+.read-link { background: none; border: none; color: #22d3ee; cursor: pointer; font-weight: bold; }
+
+/* ===== Ball Finder ===== */
+#finderForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+#finderForm label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
+#finderForm select, #finderForm input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1a0d2e;
+  color: inherit;
+}
+body.light #finderForm select, body.light #finderForm input { background: #fff; border-color: #ccc; }
+#finderForm button { grid-column: 1 / -1; justify-self: start; }
+
+#finderResult {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #1a0d2e;
+}
+body.light #finderResult { background: #fff; }
+.profile-item { margin-bottom: 8px; }
+.profile-item b { color: #22d3ee; }
+.disclaimer { margin-top: 15px; font-size: 0.85rem; color: #a99fc2; }
+
+/* ===== Compare table ===== */
+.compare-row { display: flex; gap: 10px; align-items: center; margin: 15px 0; }
+.compare-row select { flex: 1; padding: 8px; border-radius: 6px; background: #1a0d2e; color: inherit; border: 1px solid #444; }
+body.light .compare-row select { background: #fff; border-color: #ccc; }
+
+table { width: 100%; border-collapse: collapse; }
+table td { padding: 8px; border-bottom: 1px solid #333; text-align: center; }
+body.light table td { border-color: #eee; }
+
+/* ===== Reader modal ===== */
+#reader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+/* Without this, the [hidden] attribute gets overridden by the
+   "display: flex" rule above, and the popup stays visible (empty)
+   even when JS sets reader.hidden = true. */
+#reader[hidden] {
+  display: none;
+}
+.reader-box {
+  background: #1a0d2e;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+body.light .reader-box { background: #fff; }
+#closeReader {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== Footer + back to top ===== */
+footer { text-align: center; padding: 20px; color: #a99fc2; font-size: 0.85rem; }
+
+#backToTop {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 700px) {
+  #menuBtn { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    background: #1a0d2e;
+    padding: 15px;
+  }
+  .nav-links.open { display: flex; }
+  body.light .nav-links { background: #fff; }
+
+  .grid { grid-template-columns: 1fr; }
+  #finderForm { grid-template-columns: 1fr; }
+  .compare-row { flex-direction: column; align-items: stretch; }
+}
